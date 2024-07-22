@@ -4,9 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Description</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .service {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .service h2 {
+            margin-top: 0;
+        }
+        .service p {
+            margin: 10px 0;
+        }
+        .back-link {
+            text-align: center;
+            margin: 20px;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+        .bottom-nav {
+            margin-top: auto;
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+        .bottom-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .bottom-nav ul li {
+            margin: 0 10px;
+        }
+        .bottom-nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .bottom-nav ul li a:hover {
+            color: #007BFF;
+        }
+    </style>
 </head>
 <body>
     <h1>Page de Description</h1>
-    <a href="home.html">Retour à l'accueil</a>
+    <div class="services">
+        <a href="commandez.html" class="service">
+            <h2>Impression de Cartes de Visite</h2>
+            <p>Nous offrons des services d'impression de cartes de visite de haute qualité avec divers choix de papier et de finitions.</p>
+        </a>
+        <a href="commandez.html" class="service">
+            <h2>Brochures et Flyers</h2>
+            <p>Créez des brochures et des flyers attrayants pour promouvoir vos produits et services avec notre service d'impression rapide et fiable.</p>
+        </a>
+        <a href="commandez.html" class="service">
+            <h2>Affiches et Bannières</h2>
+            <p>Nos affiches et bannières sont parfaites pour attirer l'attention lors d'événements ou dans votre point de vente.</p>
+        </a>
+        <a href="commandez.html" class="service">
+            <h2>Impression de Livres</h2>
+            <p>Nous proposons des services d'impression de livres avec des options de reliure et de finition professionnelles.</p>
+        </a>
+    </div>
+    <div class="back-link">
+        <a href="home.html">Retour à l'accueil</a>
+    </div>
+    <div class="bottom-nav">
+        <nav>
+            <ul>
+                <li><a href="description.html">Description</a></li>
+                <li><a href="commandez.html">Commendez</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 </body>
 </html>

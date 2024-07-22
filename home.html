@@ -4,6 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav {
+            background-color: #f8f8f8;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        nav ul li a:hover {
+            color: #007BFF;
+        }
+        .bottom-nav {
+            margin-top: auto;
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>Bienvenue sur notre site</h1>
@@ -15,5 +57,20 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+    <!-- Contenu principal de la page -->
+    <div class="content">
+        <!-- Ajoutez votre contenu ici -->
+    </div>
+    <!-- Barre de navigation en bas -->
+    <div class="bottom-nav">
+        <nav>
+            <ul>
+                <li><a href="description.html">Description</a></li>
+                <li><a href="commandez.html">Commendez</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 </body>
 </html>
