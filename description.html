@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Description</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,74 +12,106 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjD0HV_Oxz2c4Ka0vzu-rvqyDBRjphfiN8Gg&s');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: white;
-            text-shadow: 1px 1px 2px black;
+            background-color: #f4f4f9;
+            color: #333;
         }
         h1 {
             text-align: center;
             margin-top: 20px;
         }
-        .content {
-            background-color: rgba(0, 0, 0, 0.6);
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
         }
-        nav {
-            background-color: rgba(0, 0, 0, 0.7);
+        .service {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .service h2 {
+            margin-top: 0;
+        }
+        .service p {
+            margin: 10px 0;
+        }
+        .back-link {
+            text-align: center;
+            margin: 20px;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+        .bottom-nav {
+            margin-top: auto;
+            background-color: #f1f1f1;
             padding: 10px;
             text-align: center;
         }
-        nav ul {
+        .bottom-nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
             display: flex;
             justify-content: center;
         }
-        nav ul li {
+        .bottom-nav ul li {
             margin: 0 10px;
         }
-        nav ul li a {
+        .bottom-nav ul li a {
             text-decoration: none;
-            color: white;
+            color: #333;
         }
-        nav ul li a:hover {
+        .bottom-nav ul li a:hover {
             color: #007BFF;
-        }
-        .bottom-nav {
-            margin-top: auto;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1>Bienvenue sur notre site</h1>
-    <nav>
-        <ul>
-            <li><a href="description.html">Description</a></li>
-            <li><a href="commandez.html">Commandez</a></li>
-            <li><a href="galerie.html">Galerie</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="content">
-        <h2>À propos de notre site</h2>
-        <p>Bienvenue sur notre site d'imprimerie. Nous offrons une variété de services d'impression de haute qualité, allant de l'impression de cartes de visite à la création de bannières et d'affiches. Explorez notre site pour en savoir plus sur nos services et pour passer commande.</p>
-        <p>Nous sommes dédiés à fournir des solutions d'impression rapides et fiables pour répondre à tous vos besoins professionnels et personnels. N'hésitez pas à nous contacter pour toute question ou demande spéciale.</p>
+    <h1>Page de Description</h1>
+    <div class="services">
+        <a href="commandez.html" class="service">
+            <h2>Impression de Cartes de Visite</h2>
+            <p>Nous offrons des services d'impression de cartes de visite de haute qualité avec divers choix de papier et de finitions.</p>
+        </a>
+        <a href="commandez.html" class="service">
+            <h2>Brochures et Flyers</h2>
+            <p>Créez des brochures et des flyers attrayants pour promouvoir vos produits et services avec notre service d'impression rapide et fiable.</p>
+        </a>
+        <a href="commandez.html" class="service">
+            <h2>Affiches et Bannières</h2>
+            <p>Nos affiches et bannières sont parfaites pour attirer l'attention lors d'événements ou dans votre point de vente.</p>
+        </a>
+        <a href="commandez.html" class="service">
+            <h2>Impression de Livres</h2>
+            <p>Nous proposons des services d'impression de livres avec des options de reliure et de finition professionnelles.</p>
+        </a>
+    </div>
+    <div class="back-link">
+        <a href="home.html">Retour à l'accueil</a>
     </div>
     <div class="bottom-nav">
         <nav>
             <ul>
                 <li><a href="description.html">Description</a></li>
-                <li><a href="commandez.html">Commandez</a></li>
+                <li><a href="commandez.html">Commendez</a></li>
                 <li><a href="galerie.html">Galerie</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
