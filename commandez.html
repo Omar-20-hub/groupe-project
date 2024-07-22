@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commandez</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px; /* Augmenté de 10px à 12px */
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px; /* Augmenté de 14px à 16px */
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .hidden {
+            display: none;
+        }
+        .payment-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Commandez</h1>
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="service">Choisissez un service</label>
+                <select id="service" name="service" required>
+                    <option value="">Sélectionnez un service</option>
+                    <option value="service1">Service 1 - 50€</option>
+                    <option value="service2">Service 2 - 100€</option>
+                    <option value="service3">Service 3 - 150€</option>
+                    <option value="service4">Service 4 - 200€</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="firstName">Prénom</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Nom</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="fileUpload">Téléchargez votre fichier (PDF, PNG, JPEG, JPG)</label>
+                <input type="file" id="fileUpload" name="fileUpload" accept=".pdf, .png, .jpeg, .jpg" required>
+            </div>
+            <div class="form-group">
+                <label for="paymentMethod">Mode de paiement</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="">Sélectionnez un mode de paiement</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="card">Carte bancaire</option>
+                </select>
+            </div>
+            <div id="paypalInfo" class="payment-info hidden">
+                <div class="form-group">
+                    <label for="paypalEmail">Email PayPal</label>
+                    <input type="email" id="paypalEmail" name="paypalEmail">
+                </div>
+                <div class="form-group">
+                    <label for="paypalPassword">Mot de passe PayPal</label>
+                    <input type="password" id="paypalPassword" name="paypalPassword">
+                </div>
+            </div>
+            <div id="cardInfo" class="payment-info hidden">
+                <div class="form-group">
+                    <label for="cardName">Nom complet</label>
+                    <input type="text" id="cardName" name="cardName">
+                </div>
+                <div class="form-group">
+                    <label for="cardNumber">Numéro de carte</label>
+                    <input type="text" id="cardNumber" name="cardNumber" maxlength="16">
+                </div>
+                <div class="form-group">
+                    <label for="cardExpiry">Date d'expiration (MM/AA)</label>
+                    <input type="text" id="cardExpiry" name="cardExpiry" maxlength="5" placeholder="MM/AA">
+                </div>
+                <div class="form-group">
+                    <label for="cardCVV">CVV</label>
+                    <input type="text" id="cardCVV" name="cardCVV" maxlength="4">
+                </div>
+            </div>
+            <button type="submit">Payer</button>
+        </form>
+    </div>
+
+    <div id="thankYouMessage" class="container hidden">
+        <h2>Merci pour votre commande!</h2>
+        <p>Votre commande a été bien reçue.</p>
+        <p>Vous serez redirigé vers la page d'accueil dans 5 secondes...</p>
+    </div>
+
+    <script>
+        document.getElementById('paymentMethod').addEventListener('change', function() {
+            var paypalInfo = document.getElementById('paypalInfo');
+            var cardInfo = document.getElementById('cardInfo');
+            if (this.value === 'paypal') {
+                paypalInfo.classList.remove('hidden');
+                cardInfo.classList.add('hidden');
+            } else if (this.value === 'card') {
+                paypalInfo.classList.add('hidden');
+                cardInfo.classList.remove('hidden');
+            } else {
+                paypalInfo.classList.add('hidden');
+                cardInfo.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Affiche le message de remerciement
+            document.getElementById('orderForm').classList.add('hidden');
+            document.getElementById('thankYouMessage').classList.remove('hidden');
+            
+            // Redirige vers la page d'accueil après 5 secondes
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
