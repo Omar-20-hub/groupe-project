@@ -34,12 +34,12 @@
         }
         input, select {
             width: 100%;
-            padding: 12px; /* Augmenté de 10px à 12px */
+            padding: 12px;
             margin-top: 5px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 16px; /* Augmenté de 14px à 16px */
+            font-size: 16px;
         }
         button {
             width: 100%;
@@ -60,6 +60,16 @@
         .payment-info {
             margin-top: 20px;
         }
+        #recap {
+            margin-top: 20px;
+            background-color: #f1f1f1;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #recap h3 {
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
@@ -70,10 +80,10 @@
                 <label for="service">Choisissez un service</label>
                 <select id="service" name="service" required>
                     <option value="">Sélectionnez un service</option>
-                    <option value="service1">Service 1 - 50€</option>
-                    <option value="service2">Service 2 - 100€</option>
-                    <option value="service3">Service 3 - 150€</option>
-                    <option value="service4">Service 4 - 200€</option>
+                    <option value="Impression de Cartes de Visite - 50 MAD">Impression de Cartes de Visite - 50 MAD</option>
+                    <option value="Brochures et Flyers - 100 MAD">Brochures et Flyers - 100 MAD</option>
+                    <option value="Affiches et Bannières - 150 MAD">Affiches et Bannières - 150 MAD</option>
+                    <option value="Impression de Livres - 200 MAD">Impression de Livres - 200 MAD</option>
                 </select>
             </div>
             <div class="form-group">
@@ -130,6 +140,15 @@
             </div>
             <button type="submit">Payer</button>
         </form>
+
+        <div id="recap" class="hidden">
+            <h3>Récapitulatif de la commande</h3>
+            <p><strong>Service :</strong> <span id="recapService"></span></p>
+            <p><strong>Prénom :</strong> <span id="recapFirstName"></span></p>
+            <p><strong>Nom :</strong> <span id="recapLastName"></span></p>
+            <p><strong>Email :</strong> <span id="recapEmail"></span></p>
+            <p><strong>Mode de paiement :</strong> <span id="recapPaymentMethod"></span></p>
+        </div>
     </div>
 
     <div id="thankYouMessage" class="container hidden">
@@ -154,6 +173,27 @@
             }
         });
 
+        document.getElementById('orderForm').addEventListener('input', function() {
+            // Mise à jour du récapitulatif de la commande
+            document.getElementById('recapService').textContent = document.getElementById('service').value;
+            document.getElementById('recapFirstName').textContent = document.getElementById('firstName').value;
+            document.getElementById('recapLastName').textContent = document.getElementById('lastName').value;
+            document.getElementById('recapEmail').textContent = document.getElementById('email').value;
+            document.getElementById('recapPaymentMethod').textContent = document.getElementById('paymentMethod').value;
+
+            // Affiche le récapitulatif si tous les champs sont remplis
+            var recap = document.getElementById('recap');
+            if (document.getElementById('service').value &&
+                document.getElementById('firstName').value &&
+                document.getElementById('lastName').value &&
+                document.getElementById('email').value &&
+                document.getElementById('paymentMethod').value) {
+                recap.classList.remove('hidden');
+            } else {
+                recap.classList.add('hidden');
+            }
+        });
+
         document.getElementById('orderForm').addEventListener('submit', function(event) {
             event.preventDefault();
             
@@ -169,3 +209,4 @@
     </script>
 </body>
 </html>
+
