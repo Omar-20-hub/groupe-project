@@ -3,74 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Home Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            box-sizing: border-box;
         }
-        h1 {
+        header {
+            background-color: #f8f9fa;
+            padding: 20px;
             text-align: center;
-            margin-top: 20px;
+        }
+        header a {
+            text-decoration: none;
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
         }
         nav {
-            background-color: #f8f8f8;
+            background-color: #343a40;
             padding: 10px;
-            text-align: center;
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 10px;
-        }
-        nav ul li a {
+        nav a {
+            color: white;
             text-decoration: none;
-            color: #333;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            border-radius: 5px;
         }
-        nav ul li a:hover {
-            color: #007BFF;
+        nav a:hover {
+            background-color: #0056b3;
         }
-        .bottom-nav {
-            margin-top: auto;
-            background-color: #f1f1f1;
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #f8f9fa;
             padding: 10px;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
-    <h1>Bienvenue sur notre site</h1>
-    <nav>
-        <ul>
-            <li><a href="description.html">Description</a></li>
-            <li><a href="commandez.html">Commendez</a></li>
-            <li><a href="galerie.html">Galerie</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    <!-- Contenu principal de la page -->
-    <div class="content">
-        <!-- Ajoutez votre contenu ici -->
-    </div>
-    <!-- Barre de navigation en bas -->
-    <div class="bottom-nav">
-        <nav>
-            <ul>
-                <li><a href="description.html">Description</a></li>
-                <li><a href="commandez.html">Commandez</a></li>
-                <li><a href="galerie.html">Galerie</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+
+<header>
+    <a href="#">Bienvenu sur notre site</a>
+</header>
+
+<nav>
+    <a href="#description">Description</a>
+    <a href="#commande">Commandez</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="content">
+    <h1>Ajouter ici une description et des images de service d’imprimerie</h1>
+    <p>Texte</p>
+</div>
+
+<footer>
+    All right reserved 2024
+</footer>
+
 </body>
 </html>
