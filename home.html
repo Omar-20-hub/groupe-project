@@ -28,10 +28,18 @@
             display: flex;
             justify-content: center;
         }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav li {
+            margin: 0 10px;
+        }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
             padding: 10px 20px;
             background-color: #007bff;
             border-radius: 5px;
@@ -60,10 +68,12 @@
 </header>
 
 <nav>
-    <a href="#description">Description</a>
-    <a href="#commande">Commandez</a>
-    <a href="#galerie">Galerie</a>
-    <a href="#contact">Contact</a>
+    <ul>
+        <li><a href="description.html">Description</a></li>
+        <li><a href="commandez.html">Commandez</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
 </nav>
 
 <div class="content">
